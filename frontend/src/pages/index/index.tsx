@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from "react-router-dom";
 
 import Tagline from "../../components/tagline";
@@ -25,9 +24,6 @@ interface Package{
 }
 
 export default function Index(){
-
-    const [isOpen, setOpen] = useState<boolean>(false);
-
     return(
         <>
         <Tagline/>
@@ -36,36 +32,16 @@ export default function Index(){
             <div className="absolute inset-0 bg-slate-900/40"></div>
             <div className="container relative">
                 <div className="grid md:grid-cols-12 grid-cols-1 items-center mt-10 gap-7.5">
-                    <div className="lg:col-span-8 md:col-span-7 md:order-1 order-2">
-                        <h5 className="text-3xl font-dancing! text-white">Beauty of Discover</h5>
-                        <h4 className="font-bold text-white lg:leading-normal leading-normal text-4xl lg:text-6xl mb-6 mt-5">Let's Leave The Road, <br/> And Take The Travosy</h4>
-                        <p className="text-white/70 text-xl max-w-xl">Planning for a trip? We will organize your trip with the best places and within best budget!</p>
+                    <div className="lg:col-span-9 md:col-span-10">
+                        <h5 className="text-3xl font-dancing! text-white">Your journey starts here</h5>
+                        <h1 className="font-bold text-white lg:leading-normal leading-normal text-4xl lg:text-6xl mb-6 mt-5">Travel farther. <br/> Experience more.</h1>
+                        <p className="text-white/70 text-xl max-w-xl">Thoughtfully planned holidays, handpicked stays, and local experiences—designed around your time, interests, and budget.</p>
+                        <div className="mt-8 flex flex-wrap gap-3">
+                            <Link to="/services" className="py-2.5 px-6 bg-primary text-white rounded-md font-medium">Explore Our Services</Link>
+                            <Link to="/contact-us" className="py-2.5 px-6 border border-white text-white hover:bg-white hover:text-slate-900 rounded-md font-medium duration-500">Plan My Trip</Link>
+                        </div>
                     </div>
 
-                    <div className="lg:col-span-4 md:col-span-5 md:text-center md:order-2 order-1">
-                        <Link to="#!" onClick={() => setOpen(true)} className="lightbox lg:h-24 h-20 lg:w-24 w-20 rounded-full shadow-lg dark:shadow-gray-800 inline-flex items-center justify-center bg-white hover:bg-primary text-primary hover:text-white duration-500 ease-in-out mx-auto">
-                            <i className="ri-play-fill inline-flex items-center justify-center text-3xl"></i>
-                        </Link>
-                    </div>
-                    {isOpen && 
-                        <div className="flex bg-[#00000099] overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                            <div className="relative p-1 w-full max-w-2xl max-h-full">
-                                <div className="relative bg-white rounded-lg shadow-xs dark:bg-gray-700">
-                                    <div className="flex items-center justify-between p-1 border-b rounded-t dark:border-gray-600 border-gray-200">
-                                        <button type="button" onClick={()=>setOpen(!isOpen)} className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
-                                            <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                                            </svg>
-                                            <span className="sr-only">Close modal</span>
-                                        </button>
-                                    </div>
-                                    <div className="p-1 md:p-1 space-y-4">
-                                        <iframe width="100%" height="400" src="https://www.youtube.com/embed/yba7hPeTSjk?playlist=yba7hPeTSjk&loop=1"></iframe>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        }
                 </div>
             </div>
         </section>
@@ -79,9 +55,9 @@ export default function Index(){
 
             <div className="container relative md:mt-24 mt-16">
                 <div className="grid grid-cols-1 pb-8 text-center">
-                    <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Tours Packages</h3>
+                    <h2 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Popular Tour Packages</h2>
 
-                    <p className="text-slate-400 max-w-xl mx-auto">Planning for a trip? We will organize your trip with the best places and within best budget!</p>
+                    <p className="text-slate-400 max-w-xl mx-auto">Start with one of our traveller favourites, then let us tailor the itinerary to make it completely yours.</p>
                 </div>
 
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-6">
@@ -103,7 +79,7 @@ export default function Index(){
 
                                 <div className="p-4">
                                     <p className="flex items-center text-slate-400 font-medium mb-2"><FiMapPin className="text-primary size-4 me-1"></FiMapPin> {item.place}</p>
-                                    <Link to={`/tour-detail-one/${item.id}`} className="text-lg font-medium hover:text-primary duration-500 ease-in-out">{item.title}</Link>
+                                    <Link to="/contact-us" className="text-lg font-medium hover:text-primary duration-500 ease-in-out">{item.title}</Link>
 
                                     <div className="flex items-center mt-2">
                                         <span className="text-slate-400">Rating:</span>
@@ -120,7 +96,7 @@ export default function Index(){
                                     <div className="mt-4 pt-4 flex justify-between items-center border-t border-slate-100 dark:border-gray-800">
                                         <h5 className="text-lg font-medium text-primary">$ 58 / Day</h5>
 
-                                        <Link to="" className="text-slate-400 hover:text-primary">Explore Now <i className="ri-arrow-right-s-line"></i></Link>
+                                        <Link to="/contact-us" className="text-slate-400 hover:text-primary">Enquire Now <i className="ri-arrow-right-s-line"></i></Link>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +105,7 @@ export default function Index(){
                 </div>
 
                 <div className="mt-6 text-center">
-                    <Link to="/grid-right-sidebar" className="text-slate-400 hover:text-primary inline-block">See More Tours <i className="ri-arrow-right-s-line"></i></Link>
+                    <Link to="/services" className="text-slate-400 hover:text-primary inline-block">See All Travel Services <i className="ri-arrow-right-s-line"></i></Link>
                 </div>
             </div>
 

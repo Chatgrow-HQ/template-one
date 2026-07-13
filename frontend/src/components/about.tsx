@@ -57,7 +57,7 @@ export default function About(){
                                 <FiUsers className="size-6"></FiUsers>
                             </div>
                             <div className="flex-1">
-                                <span className="text-slate-400">Visitor</span>
+                                <span className="text-slate-400">Happy Travellers</span>
                                 <p className="text-xl font-bold">{counts[0]}</p>
                             </div>
                         </div>
@@ -76,11 +76,11 @@ export default function About(){
 
                 <div className="md:col-span-7">
                     <div className="lg:ms-8">
-                        <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">World Best Travel <br/> Agency: Travosy</h3>
+                        <h2 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Travel planning made <br/> personal and effortless</h2>
 
-                        <p className="text-slate-400 max-w-xl mb-6">Get instant helpful resources about anything on the go, easily implement secure money transfer solutions, boost your daily efficiency, connect to other app users and create your own Travosy network, and much more with just a few taps. commodo consequat. Duis aute irure.</p>
+                        <p className="text-slate-400 max-w-xl mb-6">We create memorable journeys for couples, families, groups, and solo travellers. From the first idea to the journey home, our specialists handle the details while you enjoy the anticipation—and the adventure.</p>
 
-                        <Link to="" className="py-2 px-5 inline-block tracking-wide align-middle duration-500 text-base text-center bg-primary text-white rounded-md">Read More <i className="ri-arrow-right-s-line ms-0.5"></i></Link>
+                        <Link to="/about-us" className="py-2 px-5 inline-block tracking-wide align-middle duration-500 text-base text-center bg-primary text-white rounded-md">Meet Our Team <i className="ri-arrow-right-s-line ms-0.5"></i></Link>
                     </div>
                 </div>
 

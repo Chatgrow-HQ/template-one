@@ -31,7 +31,8 @@ export default function Contact(){
                     <div className="lg:col-span-5 md:col-span-6">
                         <div className="lg:ms-5">
                             <div className="bg-white dark:bg-slate-900 rounded-md shadow-sm dark:shadow-gray-800 p-6">
-                                <h3 className="mb-6 text-2xl leading-normal font-semibold">Get in touch !</h3>
+                                <h1 className="mb-2 text-2xl leading-normal font-semibold">Let’s Plan Your Next Trip</h1>
+                                <p className="text-slate-400 mb-6">Share a few details and one of our travel specialists will get back to you.</p>
 
                                 <form>
                                     <div className="grid lg:grid-cols-12 grid-cols-1 gap-3">
@@ -46,16 +47,16 @@ export default function Contact(){
                                         </div>
 
                                         <div className="lg:col-span-12">
-                                            <label htmlFor="subject" className="font-semibold">Your Question:</label>
-                                            <input name="subject" id="subject" className="mt-2 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-sm outline-none border border-gray-100 dark:border-gray-800 focus:ring-0" placeholder="Subject :" required/>
+                                            <label htmlFor="subject" className="font-semibold">Where would you like to go?</label>
+                                            <input name="subject" id="subject" className="mt-2 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-sm outline-none border border-gray-100 dark:border-gray-800 focus:ring-0" placeholder="Destination or trip type" required/>
                                         </div>
     
                                         <div className="lg:col-span-12">
-                                            <label htmlFor="comments" className="font-semibold">Your Comment:</label>
-                                            <textarea name="comments" id="comments" className="mt-2 w-full py-2 px-3 h-28 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-sm outline-none border border-gray-100 dark:border-gray-800 focus:ring-0" placeholder="Message :"></textarea>
+                                            <label htmlFor="comments" className="font-semibold">Tell us about your trip:</label>
+                                            <textarea name="comments" id="comments" className="mt-2 w-full py-2 px-3 h-28 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-sm outline-none border border-gray-100 dark:border-gray-800 focus:ring-0" placeholder="Travel dates, number of travellers, budget, and anything else we should know"></textarea>
                                         </div>
                                     </div>
-                                    <button type="submit" id="submit" name="send" className="py-2 px-5 inline-block tracking-wide align-middle duration-500 text-base text-center bg-primary text-white rounded-md mt-2">Send Message</button>
+                                    <button type="submit" id="submit" name="send" className="py-2 px-5 inline-block tracking-wide align-middle duration-500 text-base text-center bg-primary text-white rounded-md mt-2">Request a Travel Plan</button>
                                 </form>
                             </div>
                         </div>
@@ -74,7 +75,7 @@ export default function Contact(){
 
                         <div className="content mt-7">
                             <h5 className="h5 text-lg font-semibold">Phone</h5>
-                            <p className="text-slate-400 mt-3">The phrasal sequence of the is now so that many campaign and benefit</p>
+                            <p className="text-slate-400 mt-3">Speak directly with our team for trip ideas, bookings, and travel support.</p>
                             
                             <div className="mt-5">
                                 <Link to="tel:+152534-468-854" className="text-primary font-medium">+152 534-468-854</Link>
@@ -91,7 +92,7 @@ export default function Contact(){
 
                         <div className="content mt-7">
                             <h5 className="h5 text-lg font-semibold">Email</h5>
-                            <p className="text-slate-400 mt-3">The phrasal sequence of the is now so that many campaign and benefit</p>
+                            <p className="text-slate-400 mt-3">Send your travel request anytime and we will respond as soon as possible.</p>
                             
                             <div className="mt-5">
                                 <Link to="mailto:contact@example.com" className="text-primary font-medium">contact@example.com</Link>

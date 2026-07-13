@@ -28,7 +28,7 @@ export default function Footer(){
                                     <Link to="#" className="text-[22px] focus:outline-none">
                                         <img src={logoLight} alt=""/>
                                     </Link>
-                                    <p className="mt-6 text-gray-300">Planning for a trip? We will organize your trip with the best places and within best budget!</p>
+                                    <p className="mt-6 text-gray-300">Personal travel planning, inspiring destinations, and reliable support from your first idea to your journey home.</p>
                                     <ul className="list-none mt-6 space-x-1">
                                         {footerSocial.map((item:Social,index:number)=>{
                                             let Icon = item.icon
@@ -83,7 +83,7 @@ export default function Footer(){
     
                                 <div className="lg:col-span-3 md:col-span-4">
                                     <h5 className="tracking-[1px] text-gray-100 font-semibold">Newsletter</h5>
-                                    <p className="mt-6">Sign up and receive the latest tips via email.</p>
+                                    <p className="mt-6">Get destination ideas, travel tips, and seasonal offers in your inbox.</p>
                                     <form>
                                         <div className="grid grid-cols-1">
                                             <div className="my-3">

@@ -19,7 +19,7 @@ export default function Blogs(){
                 <div className="grid grid-cols-1 pb-6 text-center">
                     <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Travel Blogs</h3>
 
-                    <p className="text-slate-400 max-w-xl mx-auto">This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+                    <p className="text-slate-400 max-w-xl mx-auto">Destination inspiration, practical planning advice, and stories to help you travel with confidence.</p>
                 </div>
 
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-6">
@@ -39,11 +39,11 @@ export default function Blogs(){
                                         <span className="text-slate-400 text-sm ms-3">by <Link to="" className="text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary font-medium">Travosy</Link></span>
                                     </div>
 
-                                    <Link to="/blog-detail" className="text-lg font-medium hover:text-primary duration-500 ease-in-out">{item.title}</Link>
+                                    <Link to={`/blog/${item.id}`} className="text-lg font-medium hover:text-primary duration-500 ease-in-out">{item.title}</Link>
                                     <p className="text-slate-400 mt-2">{item.desc}</p>
 
                                     <div className="mt-3">
-                                        <Link to="/blog-detail" className="hover:text-primary inline-flex items-center">Read More <FiChevronRight className="size-4 ms-1"></FiChevronRight></Link>
+                                        <Link to={`/blog/${item.id}`} className="hover:text-primary inline-flex items-center">Read More <FiChevronRight className="size-4 ms-1"></FiChevronRight></Link>
                                     </div>
                                 </div>
                             </div>

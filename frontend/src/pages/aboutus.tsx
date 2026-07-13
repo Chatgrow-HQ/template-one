@@ -45,7 +45,7 @@ export default function Aboutus(){
             <div className="absolute inset-0 bg-linear-to-b from-slate-900/60 via-slate-900/80 to-slate-900"></div>
             <div className="container relative">
                 <div className="grid grid-cols-1 pb-8 text-center mt-10">
-                    <h3 className="text-4xl leading-normal tracking-wider font-semibold text-white">Travosy Travel Agency</h3>
+                    <h1 className="text-4xl leading-normal tracking-wider font-semibold text-white">About Travosy</h1>
                 </div>
             </div>
             
@@ -63,9 +63,9 @@ export default function Aboutus(){
 
             <div className="container relative md:mt-24 mt-16">
                 <div className="grid grid-cols-1 pb-6 text-center">
-                    <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Our Team</h3>
+                    <h2 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Meet Your Travel Experts</h2>
 
-                    <p className="text-slate-400 max-w-xl mx-auto">This is just a simple text made for this unique and awesome template, you can replace it with any text.</p>
+                    <p className="text-slate-400 max-w-xl mx-auto">A passionate team of destination specialists, itinerary designers, and support professionals ready to plan your next journey.</p>
                 </div>
 
                 <div className="grid md:grid-cols-12 grid-cols-1 mt-8 gap-7.5">
