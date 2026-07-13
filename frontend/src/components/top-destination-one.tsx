@@ -18,11 +18,12 @@ export default function TopDestinationOne(){
     const isRTL = document.documentElement.dir === "rtl";
 
     return(
-        <div className="container relative">
+        <div className="container relative md:mt-24 mt-16">
             <div className="grid grid-cols-1 pb-8 text-center">
-                <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Top Destinations</h3>
+                <span className="text-primary font-semibold uppercase tracking-widest text-sm">Find your inspiration</span>
+                <h2 className="mb-6 mt-3 md:text-4xl text-3xl md:leading-normal leading-normal font-semibold">Where will you go next?</h2>
 
-                <p className="text-slate-400 max-w-xl mx-auto">Planning for a trip? We will organize your trip with the best places and within best budget!</p>
+                <p className="text-slate-400 max-w-xl mx-auto">Explore some of the destinations our travellers love, each ready to be shaped into a journey that feels uniquely yours.</p>
             </div>
 
             <div className="grid grid-cols-1 relative mt-6">
@@ -63,8 +64,8 @@ export default function TopDestinationOne(){
                                         <img src={item.image} className="w-full h-72 object-cover scale-125 group-hover:scale-100 duration-500" alt=""/>
                                         <div className="absolute inset-0 bg-linear-to-b to-slate-900 from-transparent opacity-0 group-hover:opacity-100 duration-500"></div>
                                         <div className="absolute p-4 bottom-0 inset-s-0">
-                                            <Link to="" className="text-lg font-medium text-white hover:text-primary duration-500 ease-in-out">{item.place}</Link>
-                                            <p className="text-white/70 group-hover:text-white text-sm duration-500">{item.hotels}</p>
+                                            <Link to="/contact-us" className="text-lg font-medium text-white hover:text-primary duration-500 ease-in-out">{item.place}</Link>
+                                            <p className="text-white/70 group-hover:text-white text-sm duration-500">Build my itinerary</p>
                                         </div>
                                     </div>
                                 </SwiperSlide>

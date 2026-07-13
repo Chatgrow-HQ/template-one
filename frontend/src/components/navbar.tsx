@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
-import logoDark from "../assets/images/logo-dark.png";
-import logoLight from "../assets/images/logo-light.png";
-import logoWhite from "../assets/images/logo-white.png";
+import { FiNavigation } from "react-icons/fi";
 
 const navigation = [
   { label: "Home", to: "/" },
@@ -42,17 +40,14 @@ export default function Navbar({ navclass, navlight, manuclass }: NavbarProps) {
         <Link className="logo" to="/" aria-label="Go to home page">
           {navlight ? (
             <>
-              <span className="inline-block dark:hidden">
-                <img src={logoDark} className="h-7 l-dark" alt="Travosy" />
-                <img src={logoLight} className="h-7 l-light" alt="Travosy" />
+              <span className="inline-block text-xl font-bold tracking-wide dark:hidden">
+                <span className="l-dark"><span className="inline-flex items-center gap-2"><FiNavigation className="text-primary" /> Skyways</span></span>
+                <span className="l-light"><span className="inline-flex items-center gap-2 text-white!"><FiNavigation className="text-primary" /> Skyways</span></span>
               </span>
-              <img src={logoWhite} className="hidden h-7 dark:inline-block" alt="Travosy" />
+              <span className="hidden items-center gap-2 text-xl font-bold text-white! dark:inline-flex"><FiNavigation className="text-primary" /> Skyways</span>
             </>
           ) : (
-            <>
-              <img src={logoDark} className="h-7 inline-block dark:hidden" alt="Travosy" />
-              <img src={logoWhite} className="h-7 hidden dark:inline-block" alt="Travosy" />
-            </>
+            <span className="inline-flex items-center gap-2 text-xl font-bold tracking-wide"><FiNavigation className="text-primary" /> Skyways</span>
           )}
         </Link>
 

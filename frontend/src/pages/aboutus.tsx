@@ -6,11 +6,9 @@ import Blogs from '../components/blogs'
 import Client from '../components/client'
 import About from '../components/about'
 import Footer from '../components/footer';
-import Switcher from '../components/switcher';
+import { FinalCta } from '../components/home-conversion';
 
-import { teamData,placeImage } from "../data/data";
-
-import {FiFacebook, FiInstagram, FiLinkedin} from "react-icons/fi"
+import { placeImage } from "../data/data";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
@@ -20,12 +18,6 @@ import 'swiper/css/navigation';
 
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-
-interface TeamData{
-    image: string;
-    name: string;
-    possition: string;
-}
 
 export default function Aboutus(){
     let [isOpen, setisOpen] = useState<boolean>(false);
@@ -45,13 +37,13 @@ export default function Aboutus(){
             <div className="absolute inset-0 bg-linear-to-b from-slate-900/60 via-slate-900/80 to-slate-900"></div>
             <div className="container relative">
                 <div className="grid grid-cols-1 pb-8 text-center mt-10">
-                    <h1 className="text-4xl leading-normal tracking-wider font-semibold text-white">About Travosy</h1>
+                    <h1 className="text-4xl leading-normal tracking-wider font-semibold text-white">About Skyways</h1>
                 </div>
             </div>
             
             <div className="absolute text-center z-10 bottom-5 inset-s-0 inset-e-0 mx-3">
                 <ul className="tracking-[0.5px] mb-0 inline-block">
-                    <li className="inline-block uppercase text-[13px] font-bold duration-500 ease-in-out text-white/50 hover:text-white"><Link to="/">Travosy</Link></li>
+                    <li className="inline-block uppercase text-[13px] font-bold duration-500 ease-in-out text-white/50 hover:text-white"><Link to="/">Skyways</Link></li>
                     <li className="inline-block text-base text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180"><i className="ri-arrow-right-s-line"></i></li>
                     <li className="inline-block uppercase text-[13px] font-bold duration-500 ease-in-out text-white" aria-current="page">About Us</li>
                 </ul>
@@ -63,39 +55,29 @@ export default function Aboutus(){
 
             <div className="container relative md:mt-24 mt-16">
                 <div className="grid grid-cols-1 pb-6 text-center">
-                    <h2 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Meet Your Travel Experts</h2>
+                    <span className="text-primary font-semibold uppercase tracking-widest text-sm">Leadership &amp; mission</span>
+                    <h2 className="mb-6 mt-3 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Built on experience, professionalism, and service</h2>
 
-                    <p className="text-slate-400 max-w-xl mx-auto">A passionate team of destination specialists, itinerary designers, and support professionals ready to plan your next journey.</p>
+                    <p className="text-slate-400 max-w-2xl mx-auto">Our mission is to help clients undertake domestic and international travel with complete ease—removing the stress from itinerary planning, group organisation, reservations, and ticketing.</p>
                 </div>
 
-                <div className="grid md:grid-cols-12 grid-cols-1 mt-8 gap-7.5">
-                    {teamData.map((item:TeamData,index:number)=>{
-                        return(
-                            <div className="lg:col-span-3 md:col-span-6" key={index}>
-                                <div className="group text-center">
-                                    <div className="relative inline-block mx-auto h-52 w-52 rounded-full overflow-hidden">
-                                        <img src={item.image} className="" alt=""/>
-                                        <div className="absolute inset-0 bg-linear-to-b from-transparent to-slate-900 h-52 w-52 rounded-full opacity-0 group-hover:opacity-100 duration-500"></div>
-
-                                        <ul className="list-none absolute inset-s-0 inset-e-0 -bottom-20 group-hover:bottom-5 duration-500 space-x-1">
-                                            <li className="inline"><Link to="" className="size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-md border border-primary bg-primary text-white"><FiFacebook className="size-4"></FiFacebook></Link></li>
-                                            <li className="inline"><Link to="" className="size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-md border border-primary bg-primary text-white"><FiInstagram className="size-4"></FiInstagram></Link></li>
-                                            <li className="inline"><Link to="" className="size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-md border border-primary bg-primary text-white"><FiLinkedin className="size-4"></FiLinkedin></Link></li>
-                                        </ul>
-                                    </div>
-
-                                    <div className="content mt-3">
-                                        <Link to="" className="text-lg font-semibold hover:text-primary duration-500">{item.name}</Link>
-                                        <p className="text-slate-400">{item.possition}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    })}
+                <div className="grid md:grid-cols-2 grid-cols-1 mt-8 gap-6">
+                    <article className="rounded-xl border border-slate-100 bg-white p-7 shadow-sm dark:border-gray-800 dark:bg-slate-900">
+                        <p className="text-primary text-sm font-semibold uppercase tracking-widest">Chairman</p>
+                        <h3 className="text-xl font-semibold mt-2">Mr. Tayo Soetan</h3>
+                        <p className="text-slate-400 mt-4">Founder and business leader with experience across finance, investment, leasing, car rental, and bureau de change services. He has served in senior credit and investment roles and on the boards of several companies.</p>
+                    </article>
+                    <article className="rounded-xl border border-slate-100 bg-white p-7 shadow-sm dark:border-gray-800 dark:bg-slate-900">
+                        <p className="text-primary text-sm font-semibold uppercase tracking-widest">Managing Director</p>
+                        <h3 className="text-xl font-semibold mt-2">Mrs. Kemi Soetan</h3>
+                        <p className="text-slate-400 mt-4">A chartered accountant and Fellow of ICAN with an MBA from the University of Texas at Austin. Her professional development includes airline ticketing, operations, reservation systems, and tourism expertise.</p>
+                    </article>
                 </div>
             </div>
 
             <Client/>
+
+            <FinalCta/>
 
             <Blogs/>
         </section>
@@ -165,13 +147,9 @@ export default function Aboutus(){
                     index={currentImageIndex} // Show the clicked image first
                 />
 
-                <div className="absolute top-2/4 -translate-y-2/4 inset-s-2/4 ltr:-translate-x-2/4 rtl:translate-x-2/4 text-center">
-                    <Link to="https://www.instagram.com/shreethemes/" target="_blank" className="size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-md border border-primary bg-primary text-white"><FiInstagram className="size-4"></FiInstagram></Link>
-                </div>
             </div>
         </div>
         <Footer/>
-        <Switcher/>
         </>
     )
 }

@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
-import Switcher from "../../components/switcher";
 
 import { blogData } from "../../data/data";
 
@@ -22,7 +21,7 @@ export default function Blogs(){
             
             <div className="absolute text-center z-10 bottom-5 inset-s-0 inset-e-0 mx-3">
                 <ul className="tracking-[0.5px] mb-0 inline-block">
-                    <li className="inline-block uppercase text-[13px] font-bold duration-500 ease-in-out text-white/50 hover:text-white"><Link to="/">Travosy</Link></li>
+                    <li className="inline-block uppercase text-[13px] font-bold duration-500 ease-in-out text-white/50 hover:text-white"><Link to="/">Skyways</Link></li>
                     <li className="inline-block text-base text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180"><i className="ri-arrow-right-s-line"></i></li>
                     <li className="inline-block uppercase text-[13px] font-bold duration-500 ease-in-out text-white" aria-current="page">Blogs</li>
                 </ul>
@@ -31,6 +30,13 @@ export default function Blogs(){
 
         <section className="relative md:py-24 py-16">
             <div className="container relative">
+                <div className="grid md:grid-cols-2 grid-cols-1 gap-6 items-end mb-12">
+                    <div>
+                        <span className="text-primary font-semibold uppercase tracking-widest text-sm">Ideas for your next journey</span>
+                        <h2 className="md:text-4xl text-3xl font-semibold mt-3">Travel better, one story at a time.</h2>
+                    </div>
+                    <p className="text-slate-400 md:max-w-lg md:ms-auto">Practical advice, destination guides, and honest inspiration from our travel specialists and journeys on the ground.</p>
+                </div>
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
                     {blogData.map((item,index)=>{
                         return(
@@ -45,7 +51,7 @@ export default function Blogs(){
                                 <div className="mt-6">
                                     <div className="flex mb-4">
                                         <span className="flex items-center text-slate-400 text-sm"><FiClock className="size-4 text-slate-900 dark:text-white me-1.5"></FiClock>5 min read</span>
-                                        <span className="text-slate-400 text-sm ms-3">by <Link to="" className="text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary font-medium">Travosy</Link></span>
+                                        <span className="text-slate-400 text-sm ms-3">by <Link to="" className="text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary font-medium">Skyways</Link></span>
                                     </div>
 
                                     <Link to={`/blog/${item.id}`} className="text-lg font-medium hover:text-primary duration-500 ease-in-out">{item.title}</Link>
@@ -98,7 +104,6 @@ export default function Blogs(){
         </section>
 
         <Footer/>
-        <Switcher/>
 
         </>
     )

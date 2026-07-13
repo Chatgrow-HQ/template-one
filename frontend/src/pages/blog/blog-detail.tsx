@@ -23,7 +23,7 @@ export default function BlogDetail(){
                     <h3 className="text-4xl leading-normal tracking-wider font-semibold text-white">{data?.title ? data.title : 'Traveller Visiting Ice Cave With Amazing Eye-catching Scenes'}</h3>
 
                     <ul className="list-none mt-6">
-                        <li className="inline-block text-white/50 mx-5"> <span className="text-white block">Author :</span> <span className="block">Travosy</span></li>
+                        <li className="inline-block text-white/50 mx-5"> <span className="text-white block">Author :</span> <span className="block">Skyways</span></li>
                         <li className="inline-block text-white/50 mx-5"> <span className="text-white block">Date :</span> <span className="block">{data?.date ? data.date : '19th June 2027'}</span></li>
                         <li className="inline-block text-white/50 mx-5"> <span className="text-white block">Time :</span> <span className="block">8 Min Read</span></li>
                     </ul>
@@ -32,7 +32,7 @@ export default function BlogDetail(){
             
             <div className="absolute text-center z-10 bottom-5 inset-s-0 inset-e-0 mx-3">
                 <ul className="tracking-[0.5px] mb-0 inline-block">
-                    <li className="inline-block uppercase text-[13px] font-bold duration-500 ease-in-out text-white/50 hover:text-white"><Link to="/">Travosy</Link></li>
+                    <li className="inline-block uppercase text-[13px] font-bold duration-500 ease-in-out text-white/50 hover:text-white"><Link to="/">Skyways</Link></li>
                     <li className="inline-block text-base text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180"><i className="ri-arrow-right-s-line"></i></li>
                     <li className="inline-block uppercase text-[13px] font-bold duration-500 ease-in-out text-white" aria-current="page">Blog Detail</li>
                 </ul>

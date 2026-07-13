@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import about from '../assets/images/about.jpg'
@@ -7,43 +6,6 @@ import map from '../assets/images/map-plane-big.png'
 import { FiUsers, FiGlobe } from "react-icons/fi";
 
 export default function About(){
-
-    // For Counter
-    const [counts, setCounts] = useState([0, 0]);
-
-    useEffect(() => {
-        const starts = [0, 0];
-        const ends = [4589, 50];
-
-        const duration = 500;
-
-        const increments = starts.map((start, i) => (ends[i] - start) / (duration / 16));
-
-        let current = [...starts];
-
-        const timer = setInterval(() => {
-            let completed = true;
-
-            current = current.map((value, i) => {
-                value += increments[i];
-
-                if (value < ends[i]) {
-                    completed = false;
-                    return value;
-                } else {
-                    return ends[i];
-                }
-            });
-
-            setCounts(current.map(v => Math.floor(v)));
-
-            if (completed) clearInterval(timer);
-
-        }, 16);
-
-        return () => clearInterval(timer);
-    }, []);
-
     return(
         <div className="container relative md:mt-24 mt-16">
             <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-6 relative">
@@ -57,8 +19,8 @@ export default function About(){
                                 <FiUsers className="size-6"></FiUsers>
                             </div>
                             <div className="flex-1">
-                                <span className="text-slate-400">Happy Travellers</span>
-                                <p className="text-xl font-bold">{counts[0]}</p>
+                                <span className="text-slate-400">Established</span>
+                                <p className="text-xl font-bold">1994</p>
                             </div>
                         </div>
 
@@ -67,8 +29,8 @@ export default function About(){
                                 <FiGlobe className="size-6"></FiGlobe>
                             </div>
                             <div className="flex-1">
-                                <span className="text-slate-400">Travel Packages</span>
-                                <p className="text-xl font-bold">{counts[1]}+</p>
+                                <span className="text-slate-400">IATA Accredited</span>
+                                <p className="text-xl font-bold">Since 1997</p>
                             </div>
                         </div>
                     </div>
@@ -76,9 +38,10 @@ export default function About(){
 
                 <div className="md:col-span-7">
                     <div className="lg:ms-8">
-                        <h2 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Travel planning made <br/> personal and effortless</h2>
+                        <span className="text-primary font-semibold uppercase tracking-widest text-sm">A trusted Nigerian travel company</span>
+                        <h2 className="mb-6 mt-3 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">International and domestic travel, handled with ease</h2>
 
-                        <p className="text-slate-400 max-w-xl mb-6">We create memorable journeys for couples, families, groups, and solo travellers. From the first idea to the journey home, our specialists handle the details while you enjoy the anticipation—and the adventure.</p>
+                        <p className="text-slate-400 max-w-xl mb-6">Skyways Travels &amp; Tours Limited (RC 258233) has served travellers since 1994. As a NANTA member and IATA-accredited agent, we simplify itinerary planning, reservations, ticketing, tours, and group travel for individuals and organisations.</p>
 
                         <Link to="/about-us" className="py-2 px-5 inline-block tracking-wide align-middle duration-500 text-base text-center bg-primary text-white rounded-md">Meet Our Team <i className="ri-arrow-right-s-line ms-0.5"></i></Link>
                     </div>

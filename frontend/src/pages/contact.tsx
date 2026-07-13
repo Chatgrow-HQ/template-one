@@ -1,26 +1,26 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import travel from '../assets/images/travel-train-station.svg'
 
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import Switcher from "../components/switcher";
 
-import {FiPhone, FiMail,FiMapPin, FiX} from 'react-icons/fi'
+import {FiPhone, FiMail,FiMapPin} from 'react-icons/fi'
 
 export default function Contact(){
-    let [modal, setModal] = useState<boolean>(false)
     return(
         <>
-        <Navbar navclass="defaultscroll is-sticky" navlight={false} manuclass="justify-end!"/>
-        <div className="container-fluid relative mt-20">
-            <div className="grid grid-cols-1">
-                <div className="w-full leading-0 border-0">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin" style={{border:'0'}} title="travosy" className="w-full h-125"></iframe>
+        <Navbar navclass="defaultscroll is-sticky" navlight={true} manuclass="justify-end! nav-light"/>
+        <section className="relative table w-full items-center py-36 bg-[url('../../assets/images/bg/cta.jpg')] bg-center bg-no-repeat bg-cover">
+            <div className="absolute inset-0 bg-linear-to-b from-slate-900/55 via-slate-900/75 to-slate-900"></div>
+            <div className="container relative">
+                <div className="grid grid-cols-1 text-center mt-10">
+                    <span className="text-primary font-semibold uppercase tracking-widest text-sm">Start a conversation</span>
+                    <h1 className="text-4xl md:text-5xl leading-normal font-semibold text-white mt-3">Where can we take you?</h1>
+                    <p className="text-white/70 text-lg max-w-2xl mx-auto mt-4">Share your ideas, dates, and travel style. We’ll help turn them into a journey designed around you.</p>
                 </div>
             </div>
-        </div>
+        </section>
         <section className="relative lg:py-24 py-16">
             <div className="container">
                 <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-6">
@@ -34,7 +34,7 @@ export default function Contact(){
                                 <h1 className="mb-2 text-2xl leading-normal font-semibold">Let’s Plan Your Next Trip</h1>
                                 <p className="text-slate-400 mb-6">Share a few details and one of our travel specialists will get back to you.</p>
 
-                                <form>
+                                <form onSubmit={(event) => event.preventDefault()}>
                                     <div className="grid lg:grid-cols-12 grid-cols-1 gap-3">
                                         <div className="lg:col-span-6">
                                             <label htmlFor="name" className="font-semibold">Your Name:</label>
@@ -57,6 +57,7 @@ export default function Contact(){
                                         </div>
                                     </div>
                                     <button type="submit" id="submit" name="send" className="py-2 px-5 inline-block tracking-wide align-middle duration-500 text-base text-center bg-primary text-white rounded-md mt-2">Request a Travel Plan</button>
+                                    <p className="text-xs text-slate-400 mt-3">Free initial consultation · No obligation · Usually replies within one business day</p>
                                 </form>
                             </div>
                         </div>
@@ -78,7 +79,7 @@ export default function Contact(){
                             <p className="text-slate-400 mt-3">Speak directly with our team for trip ideas, bookings, and travel support.</p>
                             
                             <div className="mt-5">
-                                <Link to="tel:+152534-468-854" className="text-primary font-medium">+152 534-468-854</Link>
+                                <Link to="tel:+2348037120276" className="text-primary font-medium">0803 712 0276</Link>
                             </div>
                         </div>
                     </div>
@@ -95,7 +96,7 @@ export default function Contact(){
                             <p className="text-slate-400 mt-3">Send your travel request anytime and we will respond as soon as possible.</p>
                             
                             <div className="mt-5">
-                                <Link to="mailto:contact@example.com" className="text-primary font-medium">contact@example.com</Link>
+                                <Link to="mailto:skywaystravelsandtours@yahoo.com" className="text-primary font-medium">skywaystravelsandtours@yahoo.com</Link>
                             </div>
                         </div>
                     </div>
@@ -109,10 +110,10 @@ export default function Contact(){
 
                         <div className="content mt-7">
                             <h5 className="h5 text-lg font-semibold">Location</h5>
-                            <p className="text-slate-400 mt-3">C/54 Northwest Freeway, Suite 558, <br/> Houston, USA 485</p>
+                            <p className="text-slate-400 mt-3">Suite 24, Tafawa Balewa Square, Lagos<br/>P.O. Box 53669, Falomo, Ikoyi, Lagos</p>
                             
                             <div className="mt-5">
-                                <Link to="#" onClick={()=>setModal(!modal)} className="video-play-icon read-more lightbox text-primary font-medium">View on Google map</Link>
+                                <Link to="https://www.google.com/maps/search/?api=1&query=Tafawa+Balewa+Square+Lagos" target="_blank" className="text-primary font-medium">View on Google Maps</Link>
                             </div>
                         </div>
                     </div>
@@ -120,17 +121,6 @@ export default function Contact(){
             </div>
         </section>
         <Footer/>
-        <Switcher/>
-        {modal && (
-            <div className="w-full h-screen bg-slate-900/80 fixed top-0 left-0 bottom-0 right-0 z-999 flex items-center justify-center">
-                <div className="w-full h-full px-5 md:px-40 md-py-20 py-5">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d55431.05581015953!2d-95.461302!3d29.735948000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c36647a52ab1%3A0x70a301678672cb!2sBriargrove%20Park%2C%20Houston%2C%20TX%2C%20USA!5e0!3m2!1sen!2sin!4v1710322657489!5m2!1sen!2sin" width="100%" height="100%" title="myfram" loading="lazy"></iframe>
-                </div>
-                <button className="text-slate-400 absolute top-5 right-5" onClick={()=>setModal(!modal)}>
-                    <FiX className="size-5"></FiX>
-                </button>
-            </div>
-        )}
         </>
     )
 }

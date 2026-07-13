@@ -1,18 +1,10 @@
 import { Link } from "react-router-dom";
 
-import logoLight from '../assets/images/logo-light.png'
-
-import { footerCompany, footerSocial } from "../data/data";
-import {FiMapPin, FiMail, FiPhone} from 'react-icons/fi'
-import type { IconType } from "react-icons";
+import { footerCompany } from "../data/data";
+import {FiMapPin, FiMail, FiNavigation, FiPhone} from 'react-icons/fi'
 
 interface Company{
     name: string;
-    link: string;
-}
-
-interface Social{
-    icon: IconType;
     link: string;
 }
 
@@ -26,43 +18,34 @@ export default function Footer(){
                             <div className="grid md:grid-cols-12 grid-cols-1 gap-6">
                                 <div className="lg:col-span-3 md:col-span-12">
                                     <Link to="#" className="text-[22px] focus:outline-none">
-                                        <img src={logoLight} alt=""/>
+                                        <span className="inline-flex items-center gap-2 text-2xl font-bold text-white"><FiNavigation className="text-primary" /> Skyways</span>
                                     </Link>
-                                    <p className="mt-6 text-gray-300">Personal travel planning, inspiring destinations, and reliable support from your first idea to your journey home.</p>
-                                    <ul className="list-none mt-6 space-x-1">
-                                        {footerSocial.map((item:Social,index:number)=>{
-                                            let Icon = item.icon
-                                            return(
-
-                                                <li className="inline" key={index}><Link to={item.link} target="_blank" className="size-8 inline-flex items-center justify-center tracking-wide align-middle text-base border border-gray-800 dark:border-gray-700 rounded-md hover:bg-primary hover:text-white text-slate-300"><Icon className="size-4 align-middle" title="Buy Now"></Icon></Link></li>
-                                            )
-                                        })}
-                                    </ul>
+                                    <p className="mt-6 text-gray-300">Making domestic and international travel easier through professional planning, reservations, ticketing, and dependable support.</p>
                                 </div>
 
                                 <div className="lg:col-span-3 md:col-span-4">
                                     <div className="lg:ms-8">
                                         <h5 className="tracking-[1px] text-gray-100 font-semibold">Office</h5>
-                                        <h5 className="tracking-[1px] text-gray-100 mt-6">Travosy Tour & Travels</h5>
+                                        <h5 className="tracking-[1px] text-gray-100 mt-6">Skyways Travels &amp; Tours Ltd.</h5>
 
                                         <div className="flex mt-4">
                                             <FiMapPin className="size-4 text-lg text-primary me-2 mt-1"></FiMapPin>
                                             <div className="">
-                                                <h6 className="text-gray-300">C/54 Northwest Freeway, <br/> Suite 558, <br/> Houston, USA 485</h6>
+                                                <h6 className="text-gray-300">Suite 24, Tafawa Balewa Square, <br/> Lagos, Nigeria</h6>
                                             </div>
                                         </div>
 
                                         <div className="flex mt-4">
                                             <FiMail className="size-4 text-lg text-primary me-2 mt-1"></FiMail>
                                             <div className="">
-                                                <Link to="mailto:contact@example.com" className="text-slate-300 hover:text-slate-400 duration-500 ease-in-out">contact@example.com</Link>
+                                                <Link to="mailto:skywaystravelsandtours@yahoo.com" className="text-slate-300 hover:text-slate-400 duration-500 ease-in-out">skywaystravelsandtours@yahoo.com</Link>
                                             </div>
                                         </div>
                         
                                         <div className="flex mt-4">
                                             <FiPhone className="size-4 text-lg text-primary me-2 mt-1"></FiPhone>
                                             <div className="">
-                                                <Link to="tel:+152534-468-854" className="text-slate-300 hover:text-slate-400 duration-500 ease-in-out">+152 534-468-854</Link>
+                                                <Link to="tel:+2348037120276" className="text-slate-300 hover:text-slate-400 duration-500 ease-in-out">0803 712 0276</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -108,7 +91,7 @@ export default function Footer(){
                 <div className="container relative text-center">
                     <div className="grid grid-cols-1">
                         <div className="text-center">
-                            <p className="mb-0">© {new Date().getFullYear()} Travosy. Design & Develop with <i className="ri-heart-fill text-primary-600"></i> by <Link to="https://shreethemes.in/" target="_blank" className="text-reset">Shreethemes</Link>.</p>
+                            <p className="mb-0">© {new Date().getFullYear()} Skyways Travels &amp; Tours Limited. All rights reserved.</p>
                         </div>
                     </div>
                 </div>

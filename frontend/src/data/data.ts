@@ -39,43 +39,43 @@ import {FiShoppingCart,FiDribbble, FiLinkedin,FiFacebook,FiInstagram,FiTwitter,F
 export const topDestination = [
     {
         image:listing1,
-        place:'Rome, Italy',
-        hotels:'3 Hotels'
+        place:'France',
+        hotels:'International tours'
     },
     {
         image:listing2,
-        place:'Singapore',
-        hotels:'3 Hotels'
+        place:'United Kingdom',
+        hotels:'International tours'
     },
     {
         image:listing3,
-        place:'Paris, France',
-        hotels:'3 Hotels'
+        place:'Dubai, UAE',
+        hotels:'Holiday packages'
     },
     {
         image:listing4,
-        place:'Goa, India',
-        hotels:'3 Hotels'
+        place:'Morocco',
+        hotels:'Group tours'
     },
     {
         image:listing5,
-        place:'Whistler, Canada',
-        hotels:'3 Hotels'
+        place:'South Africa',
+        hotels:'Group tours'
     },
     {
         image:listing6,
-        place:'Lumpur, Malaysia',
-        hotels:'3 Hotels'
+        place:'Kenya',
+        hotels:'Educational tours'
     },
     {
         image:listing7,
-        place:'Sydney, Australia',
-        hotels:'3 Hotels'
+        place:'Egypt',
+        hotels:'Educational tours'
     },
     {
         image:listing8,
-        place:'Virginia Beach',
-        hotels:'3 Hotels'
+        place:'Ghana',
+        hotels:'Regional tours'
     },
 ]
 
@@ -83,46 +83,46 @@ export const packages = [
     {
         id:1,
         image:listing1,
-        tagText:'10% Off',
-        place:'Dubai',
-        title:'Cuba Sailing Adventure',
-        amount:'$ 58 / Day'
+        tagText:'Popular',
+        place:'Dubai, UAE',
+        title:'Dubai City & Leisure Escape',
+        amount:'Request quote'
     },
     {
         id:2,
         image:listing2,
-        place:'Italy',
-        title:'Tour in New York',
-        amount:'$ 58 / Day'
+        place:'United Kingdom & France',
+        title:'Education Through Travel',
+        amount:'Request quote'
     },
     {
         id:3,
         image:listing3,
-        place:'Maldivas',
-        title:'Discover Greece',
-        amount:'$ 58 / Day'
+        place:'South Africa',
+        title:'Culture, City & Safari',
+        amount:'Request quote'
     },
     {
         id:4,
         image:listing4,
-        place:'USA',
-        title:'Museum of Modern Art',
-        amount:'$ 58 / Day'
+        place:'Ghana',
+        title:'West African Heritage Tour',
+        amount:'Request quote'
     },
     {
         id:5,
         image:listing5,
-        place:'Bali',
-        title:'Peek Mountain View',
-        amount:'$ 58 / Day'
+        place:'Kenya',
+        title:'Kenya Group Safari',
+        amount:'Request quote'
     },
     {
         id:6,
         image:listing6,
-        tagText:'25% Off',
-        place:'Bangkok',
-        title:'Hot Baloon Journey',
-        amount:'$ 58 / Day'
+        tagText:'International',
+        place:'Egypt',
+        title:'Cairo & Nile Discovery',
+        amount:'Request quote'
     },
     {
         id:7,
@@ -172,39 +172,39 @@ export const packages = [
 export const ClientData = [
     {
         image:client1,
-        desc:'" It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. "',
-        name:'Calvin Carlo',
-        possition:'Manager'
+        desc:'“Every detail felt considered. The hotels were beautiful, the transfers were seamless, and we still had enough free time to explore on our own.”',
+        name:'Maya & Daniel',
+        possition:'Honeymoon in Greece'
     },
     {
         image:client2,
-        desc:'"The most well-known dummy text is the Lorem Ipsum, which is said to have originated in the 16th century."',
+        desc:'“Planning a family trip for six felt overwhelming until Skyways stepped in. The itinerary worked for every age and the support was excellent.”',
         name:'Christa Smith',
-        possition:'Manager'
+        possition:'Family holiday in Italy'
     },
     {
         image:client3,
-        desc:'" One disadvantage of Lorum Ipsum is that in Latin certain letters appear more frequently than others. "',
-        name:'Jemina CLone',
-        possition:'Manager'
+        desc:'“Our local guides made Morocco unforgettable. We experienced places we would never have found ourselves and felt looked after throughout.”',
+        name:'Jemina Cole',
+        possition:'Private tour of Morocco'
     },
     {
         image:client4,
-        desc:'" Thus, Lorem Ipsum has only limited suitability as a visual filler for German texts. "',
-        name:'Smith Vodka',
-        possition:'Manager'
+        desc:'“The whole journey was beautifully paced. Skyways listened to what we wanted and built a trip that genuinely felt like ours.”',
+        name:'Samuel Vodka',
+        possition:'Anniversary trip to Bali'
     },
     {
         image:client5,
-        desc:'" There is now an abundance of readable dummy texts. These are usually used when a text is required. "',
-        name:'Cristino Murfi',
-        possition:'Manager'
+        desc:'“Fast communication, thoughtful recommendations, and no hidden surprises. I would absolutely book my next solo adventure with them.”',
+        name:'Cristina Murphy',
+        possition:'Solo traveller in Portugal'
     },
     {
         image:client6,
-        desc:'" According to most sources, Lorum Ipsum can be traced back to a text composed by Cicero. "',
-        name:'Cristino Murfi',
-        possition:'Manager'
+        desc:'“From airport pickup to our final dinner, everything ran perfectly. It was the most relaxed group trip we have ever taken.”',
+        name:'Michael Chen',
+        possition:'Friends’ trip to Thailand'
     },
 ]
 
@@ -212,74 +212,74 @@ export const blogData = [
     {
         id:1,
         image:blog1,
-        date:'13th Sep 2024',
-        title:'This Spanish city is a feast for the eyes: Travosy',
-        desc:'This is required when, for example, the final text is not yet available.',
-        tag:'Travel'
+        date:'13 Sep 2025',
+        title:'A first-timer’s guide to slow travel in Barcelona',
+        desc:'Where to stay, what to see, and how to experience the city beyond the usual checklist.',
+        tag:'City Guide'
     },
     {
         id:2,
         image:blog2,
-        date:'29th Nov 2024',
-        title:'New Zealand’s South Island brims with majestic',
-        desc:'This is required when, for example, the final text is not yet available.',
-        tag:'Tour'
+        date:'29 Nov 2025',
+        title:'The perfect two-week New Zealand road trip',
+        desc:'A scenic route through the South Island’s mountains, lakes, vineyards, and coastal towns.',
+        tag:'Road Trips'
     },
     {
         id:3,
         image:blog3,
-        date:'29th Dec 2024',
-        title:'When you visit the Eternal Rome City: Travosy',
-        desc:'This is required when, for example, the final text is not yet available.',
-        tag:'Tourist'
+        date:'18 Dec 2025',
+        title:'How to spend four unforgettable days in Rome',
+        desc:'A balanced itinerary of ancient icons, neighbourhood gems, and exceptional Italian food.',
+        tag:'Itineraries'
     },
     {
         id:4,
         image:blog4,
-        date:'13th March 2024',
-        title:'My Story When I Backpacked Around The World',
-        desc:'This is required when, for example, the final text is not yet available.',
-        tag:'Flight'
+        date:'13 Mar 2025',
+        title:'What to know before your first solo adventure',
+        desc:'Practical ways to feel prepared, stay safe, meet people, and enjoy travelling at your own pace.',
+        tag:'Travel Tips'
     },
     {
         id:5,
         image:blog5,
-        date:'5th May 2024',
-        title:'Organization of accounting at the enterprise',
-        desc:'This is required when, for example, the final text is not yet available.',
-        tag:'Arab'
+        date:'5 May 2025',
+        title:'Seven ways to make a family holiday easier',
+        desc:'From choosing the right stay to building downtime into your itinerary, small decisions matter.',
+        tag:'Family Travel'
     },
     {
         id:6,
         image:blog6,
-        date:'19th June 2027',
-        title:'Three of the Best Day Trips to Make from Francisco',
-        desc:'This is required when, for example, the final text is not yet available.',
-        tag:'Dubai'
+        date:'19 Jun 2025',
+        title:'Three beautiful day trips from San Francisco',
+        desc:'Redwood forests, coastal drives, and wine country experiences within easy reach of the city.',
+        tag:'Inspiration'
     },
     {
         id:7,
         image:blog7,
-        date:'20th June 2027',
-        title:'Why Do People Travel ? Reasons People Travel in 2023',
-        desc:'This is required when, for example, the final text is not yet available.',
-        tag:'Maldivas'
+        date:'20 Jun 2025',
+        title:'When is the best time to visit the Maldives?',
+        desc:'A simple month-by-month guide to weather, crowds, marine life, and seasonal value.',
+        tag:'Maldives'
     },
     {
         id:8,
         image:blog8,
-        date:'31st Aug 2024',
-        title:'Jungles In Australia: Vermont’s Rugged, Retro Ski Mountain',
-        desc:'This is required when, for example, the final text is not yet available.',
-        tag:'News'
+        date:'31 Aug 2025',
+        title:'Australia beyond the cities: six wild escapes',
+        desc:'Rainforests, reefs, desert landscapes, and remote lodges for travellers craving more nature.',
+        tag:'Nature'
     },
     {
         id:9,
         image:blog9,
-        date:'1st Sep 2024',
-        title:'Traveller Visiting Ice Cave With Amazing Eye-catching Scenes',
-        desc:'This is required when, for example, the final text is not yet available.',
-        tag:'Packages'
+        date:'1 Sep 2025',
+        title:'Inside Iceland’s extraordinary winter ice caves',
+        desc:'How the experience works, what to wear, and why travelling with an expert guide matters.',
+        tag:'Adventure'
     },
 ]
 
