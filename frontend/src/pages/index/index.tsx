@@ -1,121 +1,99 @@
-import { Link } from "react-router-dom";
+import type { FormEvent } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { FiArrowRight, FiBriefcase, FiCalendar, FiCheckCircle, FiGlobe, FiHeadphones, FiMap, FiNavigation, FiShield, FiUsers } from "react-icons/fi";
+import { motion, useReducedMotion } from "framer-motion";
 
 import Navbar from "../../components/navbar";
-import Form from '../../components/form';
-import TopDestinationOne from '../../components/top-destination-one';
-import About from '../../components/about';
-import Client from '../../components/client';
-import Blogs from '../../components/blogs';
-import Footer from '../../components/footer';
-import { FinalCta, ServicePreview, TravelGallery, TrustStrip } from '../../components/home-conversion';
+import Footer from "../../components/footer";
+import SiteTestimonials from "../../components/site-testimonials";
+import { topDestination } from "../../data/data";
+import heroImage from "../../assets/images/skyways/hero-santorini.webp";
+import heroTravellersImage from "../../assets/images/skyways/hero-travellers-v2.jpg";
+import moroccoImage from "../../assets/images/skyways/group-morocco.webp";
+import kenyaImage from "../../assets/images/skyways/family-kenya.webp";
+import parisImage from "../../assets/images/skyways/students-paris.webp";
 
-import { packages } from '../../data/data';
+const benefits = [
+  { icon: FiShield, title: "IATA accredited", text: "Professional ticketing support since 1997." },
+  { icon: FiHeadphones, title: "Responsive support", text: "Real people available when you need help." },
+  { icon: FiCalendar, title: "Flexible planning", text: "Travel options shaped around your needs." },
+  { icon: FiCheckCircle, title: "30+ years' experience", text: "Serving travellers and organisations since 1994." },
+];
 
-import {FiMapPin} from 'react-icons/fi'
+const services = [
+  { icon: FiNavigation, title: "Flight ticketing", text: "Domestic and international reservations across major airlines." },
+  { icon: FiBriefcase, title: "Hotel reservations", text: "Hotels, resorts, apartments, transfers, and activities worldwide." },
+  { icon: FiMap, title: "Tours and holidays", text: "Local and international packages for individuals and groups." },
+  { icon: FiUsers, title: "Education through travel", text: "Purposeful international learning journeys for schools and students." },
+  { icon: FiGlobe, title: "Corporate and group travel", text: "Organised travel for businesses, churches, and government bodies." },
+  { icon: FiNavigation, title: "Travel support", text: "Insurance, car hire, meet-and-greet, and professional consultancy." },
+];
 
-interface Package{
-    id: number;
-    image: string;
-    place: string;
-    title: string;
-    amount: string;
-    tagText?: string;
-}
+const destinations = [
+  { place: "Santorini, Greece", image: heroImage },
+  { place: "Marrakech, Morocco", image: moroccoImage },
+  { place: "Kenya", image: kenyaImage },
+  { place: "Paris, France", image: parisImage },
+  { place: "Maldives", image: topDestination[0].image },
+];
 
-export default function Index(){
-    return(
-        <>
-        <Navbar navclass="defaultscroll is-sticky" navlight={true} manuclass="justify-end! nav-light"/>
-        <section className="relative md:pt-48 md:pb-40 py-32 table w-full items-center bg-[url('../../assets/images/bg/1.jpg')] bg-top bg-no-repeat bg-cover">
-            <div className="absolute inset-0 bg-slate-900/40"></div>
-            <div className="container relative">
-                <div className="grid md:grid-cols-12 grid-cols-1 items-center mt-10 gap-7.5">
-                    <div className="lg:col-span-9 md:col-span-10">
-                        <h5 className="text-3xl font-dancing! text-white">Welcome to Skyways</h5>
-                        <h1 className="font-bold text-white lg:leading-normal leading-normal text-4xl lg:text-6xl mb-6 mt-5">Travel with ease. <br/> Explore with confidence.</h1>
-                        <p className="text-white/70 text-xl max-w-xl">Flights, hotel reservations, local and international tours, and complete travel support from an experienced Nigerian agency.</p>
-                        <div className="mt-8 flex flex-wrap gap-3">
-                            <Link to="/services" className="py-2.5 px-6 bg-primary text-white rounded-md font-medium">Explore Our Services</Link>
-                            <Link to="/contact-us" className="py-2.5 px-6 border border-white text-white hover:bg-white hover:text-slate-900 rounded-md font-medium duration-500">Plan My Trip</Link>
-                        </div>
-                    </div>
+export default function Home() {
+  const navigate = useNavigate();
+  const reduceMotion = useReducedMotion();
+  const submitPlan = (event: FormEvent<HTMLFormElement>) => { event.preventDefault(); navigate("/contact-us"); };
 
-                </div>
-            </div>
+  return (
+    <div className="site-page">
+      <Navbar />
+      <main>
+        <section className="hero">
+          <motion.img className="hero__image" src={heroTravellersImage} alt="West African travellers arriving at a Mediterranean coastal destination" initial={reduceMotion ? false : { opacity: 0, scale: 1.015 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, ease: "easeOut" }} />
+          <div className="site-container"><motion.div className="hero__content" initial={reduceMotion ? false : { opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: reduceMotion ? 0 : 0.08, ease: "easeOut" }}>
+            <h1>Go farther. <span>Travel better.</span></h1>
+            <p>From the first flight search to the journey home, our Lagos team handles the details with over 30 years of travel experience.</p>
+            <div className="hero__actions"><Link className="site-button" to="/contact-us">Plan my trip <FiArrowRight /></Link><Link className="site-button site-button--outline" to="/services">See what we arrange</Link></div>
+            <div className="hero__proof"><span><FiCheckCircle /> IATA accredited</span><span>Established 1994</span></div>
+          </motion.div></div>
         </section>
 
-        <div className="container relative -mt-16 z-1">
-            <Form/>
+        <div className="site-container">
+          <motion.form className="planner" onSubmit={submitPlan} aria-label="Start planning a trip" initial={reduceMotion ? false : { opacity: 0, y: 24 }} whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.55, ease: "easeOut" }}>
+            <div className="planner__tabs"><span className="planner__tab planner__tab--active"><FiNavigation /> Flights</span><span className="planner__tab"><FiBriefcase /> Hotels</span><span className="planner__tab"><FiMap /> Tours</span><span className="planner__tab"><FiUsers /> Group travel</span></div>
+            <div className="planner__fields">
+              <div className="planner__field"><label htmlFor="from">From</label><input id="from" placeholder="Where from?" /></div>
+              <div className="planner__field"><label htmlFor="to">To</label><input id="to" placeholder="Where to?" /></div>
+              <div className="planner__field"><label htmlFor="when">Departure</label><select id="when"><option>Add dates</option><option>Within 3 months</option><option>3–6 months</option></select></div>
+              <div className="planner__field"><label htmlFor="travellers">Travellers</label><select id="travellers"><option>1 traveller</option><option>2 travellers</option><option>Group</option></select></div>
+              <button className="site-button" type="submit">Start planning</button>
+            </div>
+          </motion.form>
+          <div className="benefits">{benefits.map(({icon:Icon,title,text}) => <div className="benefit" key={title}><div className="benefit__icon"><Icon /></div><div><h3>{title}</h3><p>{text}</p></div></div>)}</div>
         </div>
 
-        <TrustStrip/>
+        <section className="site-section" aria-labelledby="destinations-heading"><div className="site-container">
+          <div className="section-head"><div><span className="site-kicker">Popular destinations</span><h2 id="destinations-heading" className="site-heading">Explore places worth the journey</h2></div><Link className="site-link" to="/contact-us">Plan a destination <FiArrowRight /></Link></div>
+          <div className="destination-grid">{destinations.map((item) => <Link to="/contact-us" className="destination-card" key={item.place}><img src={item.image} alt={item.place}/><div className="destination-card__label"><strong>{item.place}</strong><span>Ask us about this destination</span></div></Link>)}</div>
+        </div></section>
 
-        <section className="relative md:py-24 py-16 overflow-hidden">
-            <ServicePreview/>
+        <section className="site-section site-section--soft" aria-labelledby="services-heading"><div className="site-container">
+          <div className="section-head"><div><span className="site-kicker">Everything in one place</span><h2 id="services-heading" className="site-heading">Travel services made clear</h2><p className="site-copy" style={{maxWidth:620}}>Choose what you need, or let our team coordinate the full journey from the first booking to your return home.</p></div><Link className="site-link" to="/services">View all services <FiArrowRight /></Link></div>
+          <div className="service-grid">{services.map(({icon:Icon,title,text}) => <article className="service-card" key={title}><div className="service-card__icon"><Icon /></div><h3>{title}</h3><p>{text}</p></article>)}</div>
+        </div></section>
 
-            <TopDestinationOne/>
+        <section className="site-section" aria-labelledby="experiences-heading"><div className="site-container">
+          <div className="section-head"><div><span className="site-kicker">Travellers in action</span><h2 id="experiences-heading" className="site-heading">The kind of journeys we create</h2><p className="site-copy">Realistic travel concepts for families, groups, and education-through-travel programmes.</p></div></div>
+          <div className="experience-grid">
+            <article className="experience-card"><img src={moroccoImage} alt="West African travellers on a guided cultural tour in Morocco"/><div className="experience-card__body"><h3>Guided cultural journeys</h3><p>Marrakech, Morocco</p></div></article>
+            <article className="experience-card"><img src={kenyaImage} alt="Nigerian family enjoying a guided safari in Kenya"/><div className="experience-card__body"><h3>Family adventures</h3><p>Kenya</p></div></article>
+            <article className="experience-card"><img src={parisImage} alt="Nigerian students on an educational tour in Paris"/><div className="experience-card__body"><h3>Education through travel</h3><p>Paris, France</p></div></article>
+          </div>
+        </div></section>
 
-            <div className="container relative md:mt-24 mt-16">
-                <div className="grid grid-cols-1 pb-8 text-center">
-                    <span className="text-primary font-semibold uppercase tracking-widest text-sm">Explore with Skyways</span>
-                    <h2 className="mb-6 mt-3 md:text-4xl text-3xl md:leading-normal leading-normal font-semibold">Featured travel ideas</h2>
+        <section className="site-section"><div className="site-container"><div className="offer-band"><div><span className="site-kicker" style={{color:"#8fb5ff"}}>Plan with confidence</span><h2>One conversation. A complete travel plan.</h2><p>Tell us where you want to go and we will help with flights, stays, tours, and support.</p></div><Link className="site-button" to="/contact-us">Speak with a travel specialist <FiArrowRight /></Link></div></div></section>
 
-                    <p className="text-slate-400 max-w-xl mx-auto">A starting point for holidays, educational tours, and group travel. Contact us for current schedules and a personalised quotation.</p>
-                </div>
-
-                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-6 gap-6">
-                    {packages.slice(0,6).map((item:Package,index:number)=>{
-                        return(
-                            <div className="group rounded-md shadow-sm dark:shadow-gray-700" key={index}>
-                                <div className="relative overflow-hidden rounded-t-md shadow-sm dark:shadow-gray-700 mx-3 mt-3">
-                                    <img src={item.image} className="w-full h-64 object-cover scale-105 group-hover:scale-100 duration-500" alt={`${item.title} in ${item.place}`}/>
-                                    {item.tagText && (
-                                        <div className="absolute top-0 inset-s-0 p-4">
-                                            <span className="bg-primary text-white text-[12px] px-2.5 py-1 font-medium rounded-md h-5">{item.tagText}</span>
-                                        </div>
-                                    )}
-
-                                </div>
-
-                                <div className="p-4">
-                                    <p className="flex items-center text-slate-400 font-medium mb-2"><FiMapPin className="text-primary size-4 me-1"></FiMapPin> {item.place}</p>
-                                    <Link to="/contact-us" className="text-lg font-medium hover:text-primary duration-500 ease-in-out">{item.title}</Link>
-
-                                    <div className="flex items-center mt-2">
-                                        <span className="text-slate-400">Custom itinerary</span>
-                                        <ul className="text-lg font-medium text-amber-400 list-none ms-2 space-x-1">
-                                            <li className="inline"><i className="ri-star-s-fill align-middle"></i></li>
-                                            <li className="inline text-slate-900 dark:text-white text-sm">Skyways pick</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div className="mt-4 pt-4 flex justify-between items-center border-t border-slate-100 dark:border-gray-800">
-                                        <h5 className="text-lg font-medium text-primary">{item.amount}</h5>
-
-                                        <Link to="/contact-us" className="text-slate-400 hover:text-primary">Enquire Now <i className="ri-arrow-right-s-line"></i></Link>
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    })}
-                </div>
-
-                <div className="mt-6 text-center">
-                    <Link to="/services" className="text-slate-400 hover:text-primary inline-block">See All Travel Services <i className="ri-arrow-right-s-line"></i></Link>
-                </div>
-            </div>
-
-            <About/>
-
-            <TravelGallery/>
-
-            <Client/>
-
-            <FinalCta/>
-
-            <Blogs/>
-        </section>
-        <Footer/>
-        </>
-    )
+        <SiteTestimonials />
+      </main>
+      <Footer />
+    </div>
+  );
 }

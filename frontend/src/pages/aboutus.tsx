@@ -1,155 +1,23 @@
-import { useState } from 'react'
-import Navbar from "../components/navbar";
 import { Link } from "react-router-dom";
+import { FiArrowRight, FiCheckCircle } from "react-icons/fi";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
+import PageHero from "../components/page-hero";
+import SiteTestimonials from "../components/site-testimonials";
+import moroccoImage from "../assets/images/skyways/group-morocco.webp";
+import kenyaImage from "../assets/images/skyways/family-kenya.webp";
 
-import Blogs from '../components/blogs'
-import Client from '../components/client'
-import About from '../components/about'
-import Footer from '../components/footer';
-import { FinalCta } from '../components/home-conversion';
+export default function AboutUs() {
+  return <div className="site-page"><Navbar/><main>
+    <PageHero kicker="About Skyways" title="Travel expertise built over three decades." copy="Skyways Travels & Tours Limited was registered in Nigeria in 1994. We help individuals and organisations travel locally and internationally with less stress and better support." image={moroccoImage} imageAlt="Skyways travel concept: guided group tour in Morocco" action={<Link className="site-button" to="/contact-us">Talk to our team <FiArrowRight/></Link>}/>
 
-import { placeImage } from "../data/data";
+    <section className="site-section"><div className="site-container"><div className="credential-row">
+      <div className="credential"><strong>1994</strong><span>Established in Nigeria</span></div><div className="credential"><strong>RC 258233</strong><span>Registered company</span></div><div className="credential"><strong>IATA</strong><span>Accredited since 1997</span></div><div className="credential"><strong>NANTA</strong><span>Professional member</span></div>
+    </div></div></section>
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
+    <section className="site-section site-section--soft"><div className="site-container split-grid"><img src={kenyaImage} alt="Family enjoying a guided safari journey in Kenya"/><div><span className="site-kicker">Our mission</span><h2 className="site-heading">Making travel easier from start to finish.</h2><p className="site-copy" style={{marginTop:20}}>Our mission is to help clients undertake domestic and international travel with complete ease—removing the usual stress from itinerary planning, group organisation, reservations, and ticketing.</p><div className="contact-list"><div className="contact-item"><div className="contact-item__icon"><FiCheckCircle/></div><div><strong>Professional planning</strong><p className="site-copy" style={{fontSize:14,margin:4}}>Clear options and practical advice for every journey.</p></div></div><div className="contact-item"><div className="contact-item__icon"><FiCheckCircle/></div><div><strong>Local understanding</strong><p className="site-copy" style={{fontSize:14,margin:4}}>A Nigerian team with international travel expertise.</p></div></div><div className="contact-item"><div className="contact-item__icon"><FiCheckCircle/></div><div><strong>Dependable support</strong><p className="site-copy" style={{fontSize:14,margin:4}}>Help before departure and throughout your trip.</p></div></div></div></div></div></section>
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-
-export default function Aboutus(){
-    let [isOpen, setisOpen] = useState<boolean>(false);
-    let [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
-
-    const slides = placeImage.map((image:any) => ({ src: image }));
-
-    const handleImageClick = (index:number) => {
-        setCurrentImageIndex(index);
-        setisOpen(true);
-    };
-
-    return(
-        <>
-        <Navbar navclass="defaultscroll is-sticky" navlight={true} manuclass="justify-end! nav-light"/>
-        <section className="relative table w-full items-center py-36 bg-[url('../../assets/images/bg/cta.jpg')] bg-top bg-no-repeat bg-cover">
-            <div className="absolute inset-0 bg-linear-to-b from-slate-900/60 via-slate-900/80 to-slate-900"></div>
-            <div className="container relative">
-                <div className="grid grid-cols-1 pb-8 text-center mt-10">
-                    <h1 className="text-4xl leading-normal tracking-wider font-semibold text-white">About Skyways</h1>
-                </div>
-            </div>
-            
-            <div className="absolute text-center z-10 bottom-5 inset-s-0 inset-e-0 mx-3">
-                <ul className="tracking-[0.5px] mb-0 inline-block">
-                    <li className="inline-block uppercase text-[13px] font-bold duration-500 ease-in-out text-white/50 hover:text-white"><Link to="/">Skyways</Link></li>
-                    <li className="inline-block text-base text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180"><i className="ri-arrow-right-s-line"></i></li>
-                    <li className="inline-block uppercase text-[13px] font-bold duration-500 ease-in-out text-white" aria-current="page">About Us</li>
-                </ul>
-            </div>
-        </section>
-
-        <section className="relative md:pb-24 pb-16">
-            <About/>
-
-            <div className="container relative md:mt-24 mt-16">
-                <div className="grid grid-cols-1 pb-6 text-center">
-                    <span className="text-primary font-semibold uppercase tracking-widest text-sm">Leadership &amp; mission</span>
-                    <h2 className="mb-6 mt-3 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Built on experience, professionalism, and service</h2>
-
-                    <p className="text-slate-400 max-w-2xl mx-auto">Our mission is to help clients undertake domestic and international travel with complete ease—removing the stress from itinerary planning, group organisation, reservations, and ticketing.</p>
-                </div>
-
-                <div className="grid md:grid-cols-2 grid-cols-1 mt-8 gap-6">
-                    <article className="rounded-xl border border-slate-100 bg-white p-7 shadow-sm dark:border-gray-800 dark:bg-slate-900">
-                        <p className="text-primary text-sm font-semibold uppercase tracking-widest">Chairman</p>
-                        <h3 className="text-xl font-semibold mt-2">Mr. Tayo Soetan</h3>
-                        <p className="text-slate-400 mt-4">Founder and business leader with experience across finance, investment, leasing, car rental, and bureau de change services. He has served in senior credit and investment roles and on the boards of several companies.</p>
-                    </article>
-                    <article className="rounded-xl border border-slate-100 bg-white p-7 shadow-sm dark:border-gray-800 dark:bg-slate-900">
-                        <p className="text-primary text-sm font-semibold uppercase tracking-widest">Managing Director</p>
-                        <h3 className="text-xl font-semibold mt-2">Mrs. Kemi Soetan</h3>
-                        <p className="text-slate-400 mt-4">A chartered accountant and Fellow of ICAN with an MBA from the University of Texas at Austin. Her professional development includes airline ticketing, operations, reservation systems, and tourism expertise.</p>
-                    </article>
-                </div>
-            </div>
-
-            <Client/>
-
-            <FinalCta/>
-
-            <Blogs/>
-        </section>
-        <div className="container-fluid relative">
-            <div className="grid grid-cols-1 relative">
-                <div className="tiny-twelve-item">
-                    
-                    <Swiper
-                        modules={[Autoplay, Navigation]}
-                        slidesPerView={1}
-                        speed={400}
-                        autoplay={{
-                            delay: 3000,
-                            disableOnInteraction: false
-                        }}
-                        navigation={{
-                            nextEl: '.swiper-next',
-                            prevEl: '.swiper-prev',
-                        }}
-                        breakpoints={{
-                            1025: {
-                                slidesPerView: 12
-                            },
-                            992: {
-                                slidesPerView: 8
-                            },
-                            767: {
-                                slidesPerView: 6
-                            },
-                            575: {
-                                slidesPerView: 5
-                            },
-                            420: {
-                                slidesPerView: 3
-                            },
-                            320: {
-                                slidesPerView: 2
-                            }
-                        }}
-                        grabCursor={true}
-                    >
-                        {placeImage.map((item:string,index:number)=>{
-                            return(
-                                <SwiperSlide key={index}>
-                                    <Link to="" onClick={() => handleImageClick(index)} className="lightbox d-inline-block" title="">
-                                        <img src={item} className="sm:size-40 object-cover" alt=""/>
-                                    </Link>
-                                </SwiperSlide>
-                            )
-                        })}
-                    </Swiper>
-
-                    <button className="swiper-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 size-8 bg-white dark:bg-slate-800 rounded-full shadow-sm hover:bg-primary hover:text-white transition cursor-pointer">
-                        <i className="ri-arrow-left-s-line text-2xl"></i>
-                    </button>
-
-                    <button className="swiper-next absolute right-0 top-1/2 -translate-y-1/2 z-10 size-8 bg-white dark:bg-slate-800 rounded-full shadow-sm hover:bg-primary hover:text-white transition cursor-pointer">
-                        <i className="ri-arrow-right-s-line text-2xl"></i>
-                    </button>
-                    
-                </div>
-
-                <Lightbox
-                    open={isOpen}
-                    close={() => setisOpen(false)}
-                    slides={slides}
-                    index={currentImageIndex} // Show the clicked image first
-                />
-
-            </div>
-        </div>
-        <Footer/>
-        </>
-    )
+    <section className="site-section"><div className="site-container"><div className="section-head"><div><span className="site-kicker">Leadership</span><h2 className="site-heading">Experienced direction. Professional service.</h2></div></div><div className="service-grid service-grid--two"><article className="service-card"><span className="site-kicker">Chairman</span><h3>Mr. Tayo Soetan</h3><p>Founder and business leader with experience across finance, investment, leasing, car rental, and bureau de change services. He has served in senior credit and investment roles and on the boards of several companies.</p></article><article className="service-card"><span className="site-kicker">Managing Director</span><h3>Mrs. Kemi Soetan</h3><p>A chartered accountant and Fellow of ICAN with an MBA from the University of Texas at Austin. Her professional development includes airline ticketing, reservation systems, and tourism expertise.</p></article></div></div></section>
+    <SiteTestimonials/>
+  </main><Footer/></div>;
 }

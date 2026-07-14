@@ -8,7 +8,7 @@
 */
 
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap');
 
 /* Tailwind CSS */
 @import "tailwindcss";
@@ -18,8 +18,8 @@
 
 /* Theme */
 @theme {
-   --font-dm: "DM Sans", "serif";
-   --font-dancing: "Dancing Script", "serif";
+   --font-dm: "Urbanist", sans-serif;
+   --font-dancing: "Urbanist", sans-serif;
 
    --breakpoint-xs: 540px;
    --breakpoint-sm: 640px;
@@ -28,18 +28,18 @@
    --breakpoint-xl: 1140px;
    --breakpoint-2xl: 1140px;
 
-   --color-primary: #fb2c36;
-   --color-primary-50: #fef2f2;
-   --color-primary-100: #ffe2e2;
-   --color-primary-200: #ffc9c9;
-   --color-primary-300: #ffa2a2;
-   --color-primary-400: #ff6467;
-   --color-primary-500: #fb2c36;
-   --color-primary-600: #e7000b;
-   --color-primary-700: #c10007;
-   --color-primary-800: #9f0712;
-   --color-primary-900: #82181a;
-   --color-primary-950: #460809;
+   --color-primary: #155eef;
+   --color-primary-50: #eff5ff;
+   --color-primary-100: #dbe8ff;
+   --color-primary-200: #bfd5ff;
+   --color-primary-300: #93b8ff;
+   --color-primary-400: #6092ff;
+   --color-primary-500: #155eef;
+   --color-primary-600: #0d49c7;
+   --color-primary-700: #103ca0;
+   --color-primary-800: #13347f;
+   --color-primary-900: #152d68;
+   --color-primary-950: #071b3a;
 
    --text-base: 15px;
    --text-base--line-height: 28px;

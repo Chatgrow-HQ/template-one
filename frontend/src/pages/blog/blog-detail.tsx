@@ -1,100 +1,14 @@
 import { Link, useParams } from "react-router-dom";
-
+import { FiArrowLeft, FiCalendar } from "react-icons/fi";
 import Navbar from "../../components/navbar";
-import Blogs from '../../components/blogs'
-import BlogSidebar from "../../components/blog-sidebar";
 import Footer from "../../components/footer";
-import Switcher from "../../components/switcher";
-
-import blogImg from "../../assets/images/blog/9.jpg"
 import { blogData } from "../../data/data";
 
-export default function BlogDetail(){
-    let params = useParams();
-    let id:any = params.id
-    let data = blogData.find((item)=>item.id === parseInt(id))
-    return(
-        <>
-        <Navbar navclass="defaultscroll is-sticky" navlight={true} manuclass="justify-end! nav-light"/>
-        <section className="relative table w-full items-center py-36 bg-[url('../../assets/images/bg/cta.jpg')] bg-top bg-no-repeat bg-cover">
-            <div className="absolute inset-0 bg-linear-to-b from-slate-900/60 via-slate-900/80 to-slate-900"></div>
-            <div className="container relative">
-                <div className="grid grid-cols-1 pb-8 text-center mt-10">
-                    <h3 className="text-4xl leading-normal tracking-wider font-semibold text-white">{data?.title ? data.title : 'Traveller Visiting Ice Cave With Amazing Eye-catching Scenes'}</h3>
-
-                    <ul className="list-none mt-6">
-                        <li className="inline-block text-white/50 mx-5"> <span className="text-white block">Author :</span> <span className="block">Skyways</span></li>
-                        <li className="inline-block text-white/50 mx-5"> <span className="text-white block">Date :</span> <span className="block">{data?.date ? data.date : '19th June 2027'}</span></li>
-                        <li className="inline-block text-white/50 mx-5"> <span className="text-white block">Time :</span> <span className="block">8 Min Read</span></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div className="absolute text-center z-10 bottom-5 inset-s-0 inset-e-0 mx-3">
-                <ul className="tracking-[0.5px] mb-0 inline-block">
-                    <li className="inline-block uppercase text-[13px] font-bold duration-500 ease-in-out text-white/50 hover:text-white"><Link to="/">Skyways</Link></li>
-                    <li className="inline-block text-base text-white/50 mx-0.5 ltr:rotate-0 rtl:rotate-180"><i className="ri-arrow-right-s-line"></i></li>
-                    <li className="inline-block uppercase text-[13px] font-bold duration-500 ease-in-out text-white" aria-current="page">Blog Detail</li>
-                </ul>
-            </div>
-        </section>
-
-        <section className="relative md:py-24 py-16">
-            <div className="container">
-                <div className="grid md:grid-cols-12 grid-cols-1 gap-6">
-                    <div className="lg:col-span-8 md:col-span-6">
-                        <div className="relative overflow-hidden rounded-md shadow-sm dark:shadow-gray-800">
-
-                            <img src={data?.image ? data.image : blogImg} alt=""/>
-
-                            <div className="p-6">
-                                <p className="text-slate-400">The most well-known dummy text is the 'Lorem Ipsum', which is said to have originated in the 16th century. Lorem Ipsum is composed in a pseudo-Latin language which more or less corresponds to 'proper' Latin. It contains a series of real Latin words. This ancient dummy text is also incomprehensible, but it imitates the rhythm of most European languages in Latin script.</p>
-                                <p className="text-slate-400 italic border-x-4 border-primary rounded-ss-xl rounded-ee-xl mt-3 p-3">" There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. "</p>
-                                <p className="text-slate-400 mt-3">The advantage of its Latin origin and the relative meaninglessness of Lorum Ipsum is that the text does not attract attention to itself or distract the viewer's attention from the layout.</p>
-                            </div>
-                        </div>
-
-                        <div className="p-6 rounded-md shadow-sm dark:shadow-gray-800 mt-8">
-                            <h5 className="text-lg font-semibold">Leave A Comment:</h5>
-
-                            <form className="mt-8">
-                                <div className="grid lg:grid-cols-12 lg:gap-6">
-                                    <div className="lg:col-span-6 mb-5">
-                                        <div className="text-left">
-                                            <label htmlFor="name" className="font-semibold">Your Name:</label>
-                                            <input name="name" id="name" type="text" className="mt-3 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-sm outline-none border border-gray-100 dark:border-gray-800 focus:ring-0" placeholder="Name :"/>
-                                        </div>
-                                    </div>
-    
-                                    <div className="lg:col-span-6 mb-5">
-                                        <div className="text-left">
-                                            <label htmlFor="email" className="font-semibold">Your Email:</label>
-                                            <input name="email" id="email" type="email" className="mt-3 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-sm outline-none border border-gray-100 dark:border-gray-800 focus:ring-0" placeholder="Email :"/>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-1">
-                                    <div className="mb-5">
-                                        <div className="text-left">
-                                            <label htmlFor="comments" className="font-semibold">Your Comment:</label>
-                                            <textarea name="comments" id="comments" className="mt-3 w-full py-2 px-3 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-sm outline-none border border-gray-100 dark:border-gray-800 focus:ring-0 h-28" placeholder="Message :"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button type="submit" id="submit" name="send" className="py-2 px-5 inline-block tracking-wide align-middle duration-500 text-base text-center bg-primary text-white rounded-md w-full">Send Message</button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <BlogSidebar/>
-                </div>
-            </div>
-
-            <Blogs/>
-        </section>
-        <Footer/>
-        <Switcher/>
-        </>
-    )
+export default function BlogDetail() {
+  const { id } = useParams();
+  const article = blogData.find(item => item.id === Number(id)) ?? blogData[0];
+  return <div className="site-page"><Navbar/><main>
+    <article><header className="page-hero"><div className="site-container" style={{maxWidth:860}}><Link className="site-link" to="/blog"><FiArrowLeft/> Back to journal</Link><div style={{marginTop:32}}><span className="site-kicker">{article.tag}</span><h1 className="site-title">{article.title}</h1><p className="site-copy"><FiCalendar style={{display:"inline",marginRight:7}}/>{article.date} · By Skyways</p></div></div></header>
+    <div className="site-container site-section" style={{maxWidth:860}}><img src={article.image} alt="" style={{width:"100%",maxHeight:500,objectFit:"cover",borderRadius:14}}/><p className="site-copy" style={{marginTop:34,fontSize:19}}>{article.desc}</p><h2 className="site-heading" style={{fontSize:28,marginTop:36}}>Plan around what matters to you</h2><p className="site-copy">A well-planned trip balances the highlights you want to see with enough time to experience the destination properly. Consider your preferred pace, the people travelling with you, local conditions, and the level of support you would like before confirming an itinerary.</p><p className="site-copy">Skyways can help coordinate flights, accommodation, tours, transfers, and practical travel support. Contact our team when you are ready to turn an idea into a clear plan.</p><Link className="site-button" to="/contact-us" style={{marginTop:18}}>Plan a trip with Skyways</Link></div></article>
+  </main><Footer/></div>;
 }
