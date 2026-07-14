@@ -7,11 +7,13 @@ import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import SiteTestimonials from "../../components/site-testimonials";
 import { topDestination } from "../../data/data";
-import heroImage from "../../assets/images/skyways/hero-santorini.webp";
-import heroTravellersImage from "../../assets/images/skyways/hero-travellers-v2.jpg";
-import moroccoImage from "../../assets/images/skyways/group-morocco.webp";
-import kenyaImage from "../../assets/images/skyways/family-kenya.webp";
-import parisImage from "../../assets/images/skyways/students-paris.webp";
+import cruiseShipImage from "../../assets/images/skyways/real-cruise-ship.jpg";
+import cruisePortGroupImage from "../../assets/images/skyways/real-cruise-port-group.jpg";
+import cruiseCelebrationImage from "../../assets/images/skyways/real-cruise-celebration.jpg";
+import cruiseWhiteNightImage from "../../assets/images/skyways/real-cruise-white-night.jpg";
+import studentMealImage from "../../assets/images/skyways/real-student-meal.jpg";
+import scienceCentreGroupImage from "../../assets/images/skyways/real-science-centre-group.jpg";
+import scienceCentreDinosaurImage from "../../assets/images/skyways/real-science-centre-dinosaur.jpg";
 
 const benefits = [
   { icon: FiShield, title: "IATA accredited", text: "Professional ticketing support since 1997." },
@@ -30,10 +32,10 @@ const services = [
 ];
 
 const destinations = [
-  { place: "Santorini, Greece", image: heroImage },
-  { place: "Marrakech, Morocco", image: moroccoImage },
-  { place: "Kenya", image: kenyaImage },
-  { place: "Paris, France", image: parisImage },
+  { place: "Caribbean cruises", image: cruiseShipImage },
+  { place: "Nassau, Bahamas", image: cruisePortGroupImage },
+  { place: "Singapore", image: scienceCentreDinosaurImage },
+  { place: "Group cruises", image: cruiseWhiteNightImage },
   { place: "Maldives", image: topDestination[0].image },
 ];
 
@@ -47,7 +49,7 @@ export default function Home() {
       <Navbar />
       <main>
         <section className="hero">
-          <motion.img className="hero__image" src={heroTravellersImage} alt="West African travellers arriving at a Mediterranean coastal destination" initial={reduceMotion ? false : { opacity: 0, scale: 1.015 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, ease: "easeOut" }} />
+          <motion.img className="hero__image" src={cruisePortGroupImage} alt="Skyways travellers enjoying a cruise stop in Nassau, Bahamas" initial={reduceMotion ? false : { opacity: 0, scale: 1.015 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, ease: "easeOut" }} />
           <div className="site-container"><motion.div className="hero__content" initial={reduceMotion ? false : { opacity: 0, y: 26 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: reduceMotion ? 0 : 0.08, ease: "easeOut" }}>
             <h1>Go farther. <span>Travel better.</span></h1>
             <p>From the first flight search to the journey home, our Lagos team handles the details with over 30 years of travel experience.</p>
@@ -81,11 +83,13 @@ export default function Home() {
         </div></section>
 
         <section className="site-section" aria-labelledby="experiences-heading"><div className="site-container">
-          <div className="section-head"><div><span className="site-kicker">Travellers in action</span><h2 id="experiences-heading" className="site-heading">The kind of journeys we create</h2><p className="site-copy">Realistic travel concepts for families, groups, and education-through-travel programmes.</p></div></div>
+          <div className="section-head"><div><span className="site-kicker">Travellers in action</span><h2 id="experiences-heading" className="site-heading">The kind of journeys we create</h2><p className="site-copy">Real trips organised for families, private groups, schools, and education-through-travel programmes.</p></div></div>
           <div className="experience-grid">
-            <article className="experience-card"><img src={moroccoImage} alt="West African travellers on a guided cultural tour in Morocco"/><div className="experience-card__body"><h3>Guided cultural journeys</h3><p>Marrakech, Morocco</p></div></article>
-            <article className="experience-card"><img src={kenyaImage} alt="Nigerian family enjoying a guided safari in Kenya"/><div className="experience-card__body"><h3>Family adventures</h3><p>Kenya</p></div></article>
-            <article className="experience-card"><img src={parisImage} alt="Nigerian students on an educational tour in Paris"/><div className="experience-card__body"><h3>Education through travel</h3><p>Paris, France</p></div></article>
+            <article className="experience-card experience-card--wide"><img src={cruiseWhiteNightImage} alt="Skyways group dressed for a white-night celebration aboard a cruise ship"/><div className="experience-card__body"><h3>Group cruise experiences</h3><p>Celebrating together at sea</p></div></article>
+            <article className="experience-card experience-card--wide"><img src={cruiseCelebrationImage} alt="Skyways travellers gathered together aboard a cruise ship"/><div className="experience-card__body"><h3>Journeys for every generation</h3><p>Families, friends, and communities</p></div></article>
+            <article className="experience-card"><img src={scienceCentreGroupImage} alt="Students visiting Science Centre Singapore with their group leaders"/><div className="experience-card__body"><h3>Education through travel</h3><p>Science Centre Singapore</p></div></article>
+            <article className="experience-card"><img src={scienceCentreDinosaurImage} alt="Students and group leaders visiting a dinosaur exhibit at Science Centre Singapore"/><div className="experience-card__body"><h3>Learning beyond the classroom</h3><p>Interactive science experiences</p></div></article>
+            <article className="experience-card"><img src={studentMealImage} alt="Students sharing a group meal during an educational trip"/><div className="experience-card__body"><h3>Well-supported student trips</h3><p>Shared meals and memorable moments</p></div></article>
           </div>
         </div></section>
 

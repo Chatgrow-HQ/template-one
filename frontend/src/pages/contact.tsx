@@ -3,12 +3,12 @@ import { FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import PageHero from "../components/page-hero";
-import heroImage from "../assets/images/skyways/hero-santorini.webp";
+import cruiseShipImage from "../assets/images/skyways/real-cruise-ship.jpg";
 
 export default function Contact() {
   const preventSubmit = (event: FormEvent<HTMLFormElement>) => event.preventDefault();
   return <div className="site-page"><Navbar/><main>
-    <PageHero kicker="Contact Skyways" title="Tell us where you want to go." copy="Share your destination, dates, and travel needs. A Skyways travel specialist will help you understand the next steps clearly." image={heroImage} imageAlt="Santorini coast and blue-domed architecture"/>
+    <PageHero kicker="Contact Skyways" title="Tell us where you want to go." copy="Share your destination, dates, and travel needs. A Skyways travel specialist will help you understand the next steps clearly." image={cruiseShipImage} imageAlt="Cruise ship docked at a Caribbean port"/>
     <section className="site-section"><div className="site-container contact-grid">
       <div><span className="site-kicker">Speak with our team</span><h2 className="site-heading">Start planning your journey</h2><p className="site-copy" style={{marginTop:18}}>Contact us about flight bookings, hotel reservations, tours, group travel, insurance, car hire, or complete itinerary support.</p><div className="contact-list">
         <div className="contact-item"><div className="contact-item__icon"><FiPhone/></div><div><strong>Call us</strong><p className="site-copy" style={{fontSize:14,margin:4}}><a href="tel:+2348037120276">0803 712 0276</a><br/>01-7939334 · 01-7619271</p></div></div>

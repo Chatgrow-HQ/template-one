@@ -78,8 +78,9 @@ button, input, select, textarea { font: inherit; }
 .destination-card__label strong { display: block; font-size: 17px; }
 .destination-card__label span { font-size: 13px; opacity: .85; }
 
-.experience-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 16px; }
-.experience-card { overflow: hidden; border-radius: 12px; border: 1px solid var(--sky-line); background: #fff; }
+.experience-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.experience-card { grid-column: span 2; overflow: hidden; border-radius: 12px; border: 1px solid var(--sky-line); background: #fff; }
+.experience-card--wide { grid-column: span 3; }
 .experience-card img { width: 100%; height: 300px; object-fit: cover; }
 .experience-card__body { padding: 18px; }
 .experience-card__body h3 { margin: 0; font-size: 18px; font-weight: 800; }
@@ -153,6 +154,7 @@ button, input, select, textarea { font: inherit; }
   .benefits, .service-grid { grid-template-columns: repeat(2, 1fr); }
   .destination-grid { grid-template-columns: repeat(3, 1fr); }
   .experience-grid, .article-grid { grid-template-columns: 1fr 1fr; }
+  .experience-card, .experience-card--wide { grid-column: auto; }
   .page-hero__grid, .split-grid, .contact-grid { grid-template-columns: 1fr; }
   .site-footer__grid { grid-template-columns: 1fr 1fr; }
 }
