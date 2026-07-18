@@ -1,4 +1,5 @@
 import type { FormEvent } from "react";
+import { useSearchParams } from "react-router-dom";
 import { FiArrowRight, FiCompass } from "react-icons/fi";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
@@ -7,6 +8,7 @@ import { Scene } from "../components/motion-system";
 import cruiseCelebration from "../assets/images/skyways/real-cruise-celebration.jpg";
 
 export default function Packages() {
+  const [searchParams] = useSearchParams();
   const preventSubmit = (event: FormEvent<HTMLFormElement>) => event.preventDefault();
   return <div className="site-page"><Navbar/><main>
     <PageHero kicker="Holiday packages" title="Your holiday, designed around you." copy="Give us the essentials and let our team build a travel proposal that brings flights, stays, tours, and support into one clear plan." image={cruiseCelebration} imageAlt="A group enjoying a Skyways holiday" action={<a className="site-button" href="#proposal">Start my proposal <FiArrowRight/></a>}/>
@@ -15,8 +17,10 @@ export default function Packages() {
       <Scene delay={.12}><form className="site-form site-form--proposal" onSubmit={preventSubmit}><div className="form-grid">
         <label className="form-field"><span>First name</span><input required/></label><label className="form-field"><span>Last name</span><input required/></label>
         <label className="form-field"><span>Email address</span><input type="email" required/></label><label className="form-field"><span>Mobile phone</span><input type="tel" required/></label>
-        <label className="form-field form-field--full"><span>Destination</span><input placeholder="A country, city, cruise—or Help me decide"/></label>
-        <label className="form-field"><span>Number of people</span><input type="number" min="1" defaultValue="1"/></label><label className="form-field"><span>Number of nights</span><input type="number" min="1" defaultValue="5"/></label>
+        <label className="form-field form-field--full"><span>Destination</span><input defaultValue={searchParams.get("destination") || ""} placeholder="A country, city, cruise—or Help me decide"/></label>
+        <label className="form-field"><span>Number of people</span><input type="text" defaultValue={searchParams.get("travellers") || "1"}/></label><label className="form-field"><span>Preferred travel date</span><input type="date" defaultValue={searchParams.get("date") || ""}/></label>
+        <label className="form-field form-field--full"><span>Travel type</span><input defaultValue={searchParams.get("type") || "Holiday"} readOnly/></label>
+        <label className="form-field"><span>Number of nights</span><input type="number" min="1" defaultValue="5"/></label>
         <label className="form-field form-field--full"><span>Children’s ages, if applicable</span><input placeholder="For example: 6, 9, 14"/></label>
         <label className="form-field form-field--full"><span>Anything else?</span><textarea rows={4} placeholder="Preferred dates, departure city, interests, or special requirements"/></label>
         <div className="form-field form-field--full"><button className="site-button" type="submit">Request my proposal <FiArrowRight/></button></div>

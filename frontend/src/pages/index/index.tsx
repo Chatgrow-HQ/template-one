@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
-import { FiArrowRight, FiCheck, FiCompass, FiNavigation, FiShield, FiUsers } from "react-icons/fi";
+import type { FormEvent } from "react";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { FiArrowRight, FiCalendar, FiCheck, FiCompass, FiMapPin, FiNavigation, FiSearch, FiShield, FiUsers } from "react-icons/fi";
 import { motion, useReducedMotion } from "framer-motion";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
@@ -15,6 +17,20 @@ const audiences = ["Leisure", "Business", "Families", "Groups", "Study abroad", 
 
 export default function Home() {
   const reduceMotion = useReducedMotion();
+  const navigate = useNavigate();
+  const [bookingType, setBookingType] = useState("Holiday");
+  const submitBooking = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const params = new URLSearchParams({
+      type: bookingType,
+      destination: String(data.get("destination") || ""),
+      date: String(data.get("date") || ""),
+      travellers: String(data.get("travellers") || "1"),
+    });
+    navigate(`/holiday-packages?${params.toString()}`);
+  };
+
   return <div className="site-page"><Navbar/><main>
     <section className="hero">
       <div className="hero__glow hero__glow--one"/><div className="hero__glow hero__glow--two"/><FlightPath/>
@@ -32,6 +48,20 @@ export default function Home() {
           <div className="hero__orbit" aria-hidden="true"><FiNavigation/></div>
         </motion.div>
       </div>
+      <motion.form className="site-container quick-booking" onSubmit={submitBooking} initial={reduceMotion ? false : {opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:.65,delay:.35,ease:[.16,1,.3,1]}}>
+        <div className="quick-booking__top">
+          <div><span className="site-kicker">Quick booking</span><strong>Start with the essentials</strong></div>
+          <div className="quick-booking__tabs" role="group" aria-label="Choose travel type">
+            {["Flights","Hotels","Tours","Holiday"].map(type=><button className={bookingType===type?"active":""} type="button" onClick={()=>setBookingType(type)} key={type}>{type}</button>)}
+          </div>
+        </div>
+        <div className="quick-booking__fields">
+          <label><span><FiMapPin/> Destination</span><input name="destination" placeholder="Where would you like to go?" required/></label>
+          <label><span><FiCalendar/> Travel date</span><input name="date" type="date"/></label>
+          <label><span><FiUsers/> Travellers</span><select name="travellers" defaultValue="2"><option value="1">1 traveller</option><option value="2">2 travellers</option><option value="3">3 travellers</option><option value="4">4 travellers</option><option value="5+">5+ travellers</option><option value="group">Group travel</option></select></label>
+          <button className="site-button" type="submit"><FiSearch/> Find options</button>
+        </div>
+      </motion.form>
       <div className="service-marquee"><motion.div animate={reduceMotion ? undefined : {x:["0%","-50%"]}} transition={{duration:28,repeat:Infinity,ease:"linear"}}>{[...audiences,...audiences].map((item,index)=><span key={`${item}-${index}`}>{item}<i>✦</i></span>)}</motion.div></div>
     </section>
 
