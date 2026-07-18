@@ -8,7 +8,7 @@
 */
 
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700&display=swap');
 
 /* Tailwind CSS */
 @import "tailwindcss";
@@ -18,8 +18,8 @@
 
 /* Theme */
 @theme {
-   --font-dm: "Urbanist", sans-serif;
-   --font-dancing: "Urbanist", sans-serif;
+   --font-dm: "Poppins", sans-serif;
+   --font-dancing: "Poppins", sans-serif;
 
    --breakpoint-xs: 540px;
    --breakpoint-sm: 640px;

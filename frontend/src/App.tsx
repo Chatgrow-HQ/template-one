@@ -1,32 +1,47 @@
-import { Navigate, Route, Routes } from "react-router-dom";
-
+import { AnimatePresence } from "framer-motion";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/index";
 import AboutUs from "./pages/aboutus";
 import Services from "./pages/services";
-import Blog from "./pages/blog/blogs";
-import BlogDetail from "./pages/blog/blog-detail";
 import ContactUs from "./pages/contact";
+import Packages from "./pages/packages";
+import Faq from "./pages/faq";
+import Privacy from "./pages/legal/privacy";
+import Terms from "./pages/legal/terms";
+import CookiePolicy from "./pages/legal/cookies";
+import BookingTerms from "./pages/legal/booking";
+import CancellationPolicy from "./pages/legal/cancellation";
 import ScrollToTop from "./components/scroll-to-top";
+import CookieNotice from "./components/cookie-notice";
+import { RouteScene, ScrollProgress } from "./components/motion-system";
 
 export default function App() {
+  const location = useLocation();
   return (
     <>
       <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/:id" element={<BlogDetail />} />
-        <Route path="/contact-us" element={<ContactUs />} />
-
-        {/* Legacy links kept as redirects so old bookmarks do not break. */}
-        <Route path="/aboutus" element={<Navigate to="/about-us" replace />} />
-        <Route path="/blogs" element={<Navigate to="/blog" replace />} />
-        <Route path="/blog-detail/:id" element={<Navigate to="/blog" replace />} />
-        <Route path="/contact" element={<Navigate to="/contact-us" replace />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <ScrollProgress />
+      <AnimatePresence mode="wait">
+        <RouteScene key={location.pathname}>
+          <Routes location={location}>
+            <Route path="/" element={<Home />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/holiday-packages" element={<Packages />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/contact-us" element={<ContactUs />} />
+            <Route path="/privacy-policy" element={<Privacy />} />
+            <Route path="/terms-and-conditions" element={<Terms />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
+            <Route path="/booking-terms" element={<BookingTerms />} />
+            <Route path="/cancellation-policy" element={<CancellationPolicy />} />
+            <Route path="/aboutus" element={<Navigate to="/about-us" replace />} />
+            <Route path="/contact" element={<Navigate to="/contact-us" replace />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </RouteScene>
+      </AnimatePresence>
+      <CookieNotice />
     </>
   );
 }

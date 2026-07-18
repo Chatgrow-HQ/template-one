@@ -1,8 +1,8 @@
 {
-  "name": "travosy",
+  "name": "skyways-travels-website",
   "version": "1.7.0",
   "private": true,
-  "description": "React Js Tour & Travels Agency Template",
+  "description": "Skyways Travels and Tours Limited website",
   "type": "module",
   "scripts": {
     "dev": "vite",
