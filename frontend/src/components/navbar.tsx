@@ -6,7 +6,7 @@ import BrandMark from "./brand-mark";
 
 const links = [
   ["Home", "/"], ["About", "/about-us"], ["Services", "/services"],
-  ["Holiday Packages", "/holiday-packages"], ["FAQ", "/faq"],
+  ["Gallery", "/gallery"], ["FAQ", "/faq"],
 ];
 
 export default function Navbar() {
@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <motion.header className="site-nav" initial={reduceMotion ? false : { opacity: 0, y: -22 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1] }}>
       <div className="site-container site-nav__inner">
-        <Link to="/" className="site-brand" aria-label="Skyways home"><BrandMark /><span>Skyways<small>TRAVELS &amp; TOURS</small></span></Link>
+        <Link to="/" className="site-brand" aria-label="Skyways home"><BrandMark /></Link>
         <nav className={`site-nav__links ${open ? "open" : ""}`} aria-label="Primary navigation">
           {links.map(([label, to]) => <NavLink key={to} to={to} end={to === "/"} onClick={() => setOpen(false)}>{label}</NavLink>)}
         </nav>

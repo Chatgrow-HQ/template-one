@@ -4,7 +4,7 @@ import Home from "./pages/index";
 import AboutUs from "./pages/aboutus";
 import Services from "./pages/services";
 import ContactUs from "./pages/contact";
-import Packages from "./pages/packages";
+import Gallery from "./pages/gallery";
 import Faq from "./pages/faq";
 import Privacy from "./pages/legal/privacy";
 import Terms from "./pages/legal/terms";
@@ -27,7 +27,8 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/holiday-packages" element={<Packages />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/holiday-packages" element={<Navigate to="/gallery" replace />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/privacy-policy" element={<Privacy />} />
